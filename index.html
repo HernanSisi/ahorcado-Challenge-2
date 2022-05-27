@@ -6,8 +6,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ahorcado</title>
+    <link rel="icon" href="ico/logo.ico" type="image/x-icon">
     <link rel="stylesheet" href="css/reset.css">
     <link rel="stylesheet" href="css/index_style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Grape+Nuts&family=Patrick+Hand&display=swap" rel="stylesheet">
     <style type="text/css" charset="utf-8">
     @font-face {
         src: url('./font/fuente-letras-ahorcado/FuenteAhorcados.eot');
@@ -26,44 +30,72 @@
     </style>
 </head>
 
-<body>
+<body ondragstart="return false" onselectstart="return false" oncontextmenu="return false">
+    <header>
+        <div class="contenedor-header">
+            <div class="logo">
+                <img src="svg/logo.svg" alt="Logo de la pagina">
+                <h1>Hernan Sisi</h1>
+            </div>
+            <h1 class="titulo" style="display: none;">Ahorcados</h1>
+            <div>
+                <input type="checkbox" checked onChange="changeTheme();" id="input">
+                <label class="switch" for="input">
+                    <div class="sliderRound">
+                        <svg width="20" height="20">
+                            <circle class="centro-luna" cx="10" cy="10" r="10" fill="transparent">
+                        </svg>
+                    </div>
+                </label>
+            </div>
+        </div>
+    </header>
     <main>
         <section class="Juego">
-            <div class="dibujo-ahorcado"><svg data-src="svg/ahorcado.svg" style="height:250px;width:250px;"></svg></div>
-            <div class="palabra"></div>
+            <div class="dibujo-ahorcado"><svg data-src="svg/ahorcado.svg" style="height:320px;width:320px;"></svg></div>
+            <div class="palabra">
+                <div class="letras-A pistas oculto-respuesta"><p>H</p><div style="height:10px;width:30px; display: flex;"><svg data-src="svg/lineas-letra.svg" style="height:10px;width:30px;"></svg></div></div>
+                <div class="letras-A pistas "><p>O</p><div style="height:10px;width:30px; display: flex;"><svg data-src="svg/lineas-letra.svg" style="height:10px;width:30px;"></svg></div></div>
+                <div class="letras-A pistas oculto-respuesta"><p>L</p><div style="height:10px;width:30px; display: flex;"><svg data-src="svg/lineas-letra.svg" style="height:10px;width:30px;"></svg></div></div>
+                <div class="letras-A pistas oculto-respuesta"><p>I</p><div style="height:10px;width:30px; display: flex;"><svg data-src="svg/lineas-letra.svg" style="height:10px;width:30px;"></svg></div></div>
+                <div class="letras-A pistas "><p>S</p><div style="height:10px;width:30px; display: flex;"><svg data-src="svg/lineas-letra.svg" style="height:10px;width:30px;"></svg></div></div>
+                <div class="letras-A pistas oculto-respuesta"><p>H</p><div style="height:10px;width:30px; display: flex;"><svg data-src="svg/lineas-letra.svg" style="height:10px;width:30px;"></svg></div></div>
+                <div class="letras-A pistas "><p>O</p><div style="height:10px;width:30px; display: flex;"><svg data-src="svg/lineas-letra.svg" style="height:10px;width:30px;"></svg></div></div>
+                <div class="letras-A pistas oculto-respuesta"><p>L</p><div style="height:10px;width:30px; display: flex;"><svg data-src="svg/lineas-letra.svg" style="height:10px;width:30px;"></svg></div></div>
+                <div class="letras-A pistas oculto-respuesta"><p>I</p><div style="height:10px;width:30px; display: flex;"><svg data-src="svg/lineas-letra.svg" style="height:10px;width:30px;"></svg></div></div>
+                <div class="letras-A pistas "><p>S</p><div style="height:10px;width:30px; display: flex;"><svg data-src="svg/lineas-letra.svg" style="height:10px;width:30px;"></svg></div></div>
+                <div class="letras-A pistas oculto-respuesta"><p>H</p><div style="height:10px;width:30px; display: flex;"><svg data-src="svg/lineas-letra.svg" style="height:10px;width:30px;"></svg></div></div>
+                <div class="letras-A pistas "><p>O</p><div style="height:10px;width:30px; display: flex;"><svg data-src="svg/lineas-letra.svg" style="height:10px;width:30px;"></svg></div></div>
+                <div class="letras-A pistas oculto-respuesta"><p>L</p><div style="height:10px;width:30px; display: flex;"><svg data-src="svg/lineas-letra.svg" style="height:10px;width:30px;"></svg></div></div>
+                <div class="letras-A pistas oculto-respuesta"><p>I</p><div style="height:10px;width:30px; display: flex;"><svg data-src="svg/lineas-letra.svg" style="height:10px;width:30px;"></svg></div></div>
+                <div class="letras-A pistas "><p>S</p><div style="height:10px;width:30px; display: flex;"><svg data-src="svg/lineas-letra.svg" style="height:10px;width:30px;"></svg></div></div>
+            </div>
             <div id="teclado">
-                <button class="boton-normal" id="letra-A">A</button>
-                <button class="boton-normal" id="letra-B">B</button>
-                <button class="boton-normal" id="letra-C">C</button>
-                <button class="boton-normal" id="letra-D">D</button>
-                <button class="boton-normal" id="letra-E">E</button>
-                <button class="boton-normal" id="letra-E">F</button>
-                <button class="boton-normal" id="letra-E">G</button>
-                <button class="boton-normal" id="letra-E">H</button>
-                <button class="boton-normal" id="letra-E">I</button>
-                <button class="boton-normal" id="letra-E">J</button>
-                <button class="boton-normal" id="letra-E">K</button>
-                <button class="boton-normal" id="letra-E">L</button>
-                <button class="boton-normal" id="letra-E">M</button>
-                <button class="boton-normal" id="letra-E">N</button>
-                <button class="boton-normal" id="letra-E">Ñ</button>
-                <button class="boton-normal" id="letra-E">O</button>
-                <button class="boton-normal" id="letra-E">P</button>
-                <button class="boton-normal" id="letra-E">Q</button>
-                <button class="boton-normal" id="letra-E">R</button>
-                <button class="boton-normal" id="letra-E">S</button>
-                <button class="boton-normal" id="letra-E">T</button>
-                <button class="boton-normal" id="letra-E">U</button>
-                <button class="boton-normal" id="letra-E">V</button>
-                <button class="boton-normal" id="letra-E">W</button>
-                <button class="boton-normal" id="letra-E">X</button>
-                <button class="boton-normal" id="letra-E">Y</button>
-                <button class="boton-normal" id="letra-E">Z</button>
             </div>
         </section>
     </main>
+    <footer>
+        <svg alt="Logo de la pagina" id="logo-footer" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 95.5 171.9">
+            <g id="Layer_1" data-name="Layer 1">
+                <polygon class="cls-1"
+                    points="57.3 114.6 76.4 114.6 95.5 124.15 76.4 133.7 57.3 133.7 57.3 143.25 38.2 152.8 38.2 95.5 19.1 105.05 19.1 162.35 0 171.9 0 0 19.1 9.55 19.1 66.85 38.2 76.4 38.2 19.1 57.3 28.65 57.3 38.2 76.4 38.2 95.5 47.75 76.4 57.3 57.3 57.3 57.3 76.4 76.4 76.4 95.5 85.95 76.4 95.5 57.3 95.5 57.3 114.6" />
+            </g>
+        </svg>
+        <p class="pie-pagina">By: Hernan Alejandro Sisi</p>
+        <div id="footer-redes">
+            <a class="link-profesionales" href="#"><img src="svg/linkedin.svg" alt="logo de Linkedin" class="redes"></a>
+            <a class="link-profesionales" href="https://twitter.com/hernansisi2002"><img src="svg/twitter.svg"
+                    alt="logo de twitter" class="redes"></a>
+            <a class="link-profesionales" href="https://github.com/HernanSisi"><img src="svg/github.svg"
+                    alt="logo de GitHub" class="redes"></a>
+        </div>
+    </footer>
 </body>
-
+<script src="js/PalabraOculta.js"></script>
+<script src="js/modoOscuro.js"></script>
+<script src="js/vidas.js"></script>
+<script src="js/keyboard.js"></script>
 <script src="js/princiapl.js"></script>
+
 
 </html>
