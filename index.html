@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html data-theme="light" lang="es">
+<html data-theme="dark" lang="es">
 
 <head>
 
@@ -40,7 +40,7 @@
             <h1 class="titulo" style="display: none;">Ahorcados</h1>
             <div>
                 <input type="checkbox" checked onChange="changeTheme();" id="input">
-                <label class="switch" for="input">
+                <label class="switch switch-izquierda" for="input">
                     <div class="sliderRound">
                         <svg width="20" height="20">
                             <circle class="centro-luna" cx="10" cy="10" r="10" fill="transparent">
@@ -51,27 +51,29 @@
         </div>
     </header>
     <main>
-        <section class="Juego">
+        <section class="menu-inicio">
+            <p class="texto-titulo-ahorcado text-gradient">AHORCADO</p>
+            <button class="iniciar-juego boton-menu oscuro">Iniciar Juego</button>
+            <button class="boton-agregar-palabra boton-menu claro">Agregar Palabra</button>
+        </section>
+        <section class="Juego desactivado">
             <div class="dibujo-ahorcado"><svg data-src="svg/ahorcado.svg" style="height:320px;width:320px;"></svg></div>
-            <div class="palabra">
-                <div class="letras-A pistas oculto-respuesta"><p>H</p><div style="height:10px;width:30px; display: flex;"><svg data-src="svg/lineas-letra.svg" style="height:10px;width:30px;"></svg></div></div>
-                <div class="letras-A pistas "><p>O</p><div style="height:10px;width:30px; display: flex;"><svg data-src="svg/lineas-letra.svg" style="height:10px;width:30px;"></svg></div></div>
-                <div class="letras-A pistas oculto-respuesta"><p>L</p><div style="height:10px;width:30px; display: flex;"><svg data-src="svg/lineas-letra.svg" style="height:10px;width:30px;"></svg></div></div>
-                <div class="letras-A pistas oculto-respuesta"><p>I</p><div style="height:10px;width:30px; display: flex;"><svg data-src="svg/lineas-letra.svg" style="height:10px;width:30px;"></svg></div></div>
-                <div class="letras-A pistas "><p>S</p><div style="height:10px;width:30px; display: flex;"><svg data-src="svg/lineas-letra.svg" style="height:10px;width:30px;"></svg></div></div>
-                <div class="letras-A pistas oculto-respuesta"><p>H</p><div style="height:10px;width:30px; display: flex;"><svg data-src="svg/lineas-letra.svg" style="height:10px;width:30px;"></svg></div></div>
-                <div class="letras-A pistas "><p>O</p><div style="height:10px;width:30px; display: flex;"><svg data-src="svg/lineas-letra.svg" style="height:10px;width:30px;"></svg></div></div>
-                <div class="letras-A pistas oculto-respuesta"><p>L</p><div style="height:10px;width:30px; display: flex;"><svg data-src="svg/lineas-letra.svg" style="height:10px;width:30px;"></svg></div></div>
-                <div class="letras-A pistas oculto-respuesta"><p>I</p><div style="height:10px;width:30px; display: flex;"><svg data-src="svg/lineas-letra.svg" style="height:10px;width:30px;"></svg></div></div>
-                <div class="letras-A pistas "><p>S</p><div style="height:10px;width:30px; display: flex;"><svg data-src="svg/lineas-letra.svg" style="height:10px;width:30px;"></svg></div></div>
-                <div class="letras-A pistas oculto-respuesta"><p>H</p><div style="height:10px;width:30px; display: flex;"><svg data-src="svg/lineas-letra.svg" style="height:10px;width:30px;"></svg></div></div>
-                <div class="letras-A pistas "><p>O</p><div style="height:10px;width:30px; display: flex;"><svg data-src="svg/lineas-letra.svg" style="height:10px;width:30px;"></svg></div></div>
-                <div class="letras-A pistas oculto-respuesta"><p>L</p><div style="height:10px;width:30px; display: flex;"><svg data-src="svg/lineas-letra.svg" style="height:10px;width:30px;"></svg></div></div>
-                <div class="letras-A pistas oculto-respuesta"><p>I</p><div style="height:10px;width:30px; display: flex;"><svg data-src="svg/lineas-letra.svg" style="height:10px;width:30px;"></svg></div></div>
-                <div class="letras-A pistas "><p>S</p><div style="height:10px;width:30px; display: flex;"><svg data-src="svg/lineas-letra.svg" style="height:10px;width:30px;"></svg></div></div>
+            <div class="palabra"></div>
+            <div id="teclado"></div>
+            <div class="botonera">
+                <button class="volver-menu-principal boton-menu claro">Volver</button>
+                <button class="boton-reinicio boton-menu oscuro">Nuevo juego</button>
             </div>
-            <div id="teclado">
+            <div class="caja-mensaje"><h1 class="" id="hijo-caja-mensaje"></h1></div>
+        </section>
+        <section class="agregar-palabra desactivado">
+            <input type="text" name="nueva-palabra-campo" id="nueva-palabra-campo" maxlength="15" pattern="^[A-Za-z]+$" placeholder="Escriba aquí..." minlength="4" required>
+            <abbr title="Caracteres permitidos de la A a la Z, incluyendo la Ñ" class="texto-codicion">*La palabrá debera ser mayor a 4 letras y menor que 15 letras y solo usar caracteres.</abbr>
+            <div class="botonera">
+                <button class="volver-menu-principal boton-menu claro">Volver</button>
+                <button class="boton-nueva-palabra boton-menu oscuro">Agregar</button>
             </div>
+            <span class="palabra-agregada"></span>
         </section>
     </main>
     <footer>
@@ -96,6 +98,7 @@
 <script src="js/vidas.js"></script>
 <script src="js/keyboard.js"></script>
 <script src="js/princiapl.js"></script>
+<script src="js/comportamientoBotonera.js"></script>
 
 
 </html>

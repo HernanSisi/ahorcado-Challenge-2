@@ -24,7 +24,7 @@ var PalabrasOriginales = [
     "TITULO",
     "LUNAR",
     "GARAJE",
-    "LADRONES",
+    "TECLADO",
     "DECAPITAR",
     "OBESO",
     "RUGIR",
@@ -44,10 +44,9 @@ var PalabrasOriginales = [
     "AVION",
     "TREN",
     "COMPUTADORA",
-    "VIDEOJUEGO",
+    "AURICULAR",
     "VOTAR",
     "GRAMO",
     "RATONERA",
     "ALIMENTO"
 ];
-var palabrasagregadas = [];
