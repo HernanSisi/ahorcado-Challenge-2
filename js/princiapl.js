@@ -1,11 +1,11 @@
-document.addEventListener('DOMContentLoaded', () => {
+/*document.addEventListener('DOMContentLoaded', () => {
     document.querySelectorAll('svg[data-src]').forEach(svg => {
         fetch(svg.dataset.src).then(respuesta =>
             respuesta.text()).then(xml =>
                 svg.innerHTML = xml);
         svg.removeAttribute("data-src");
     });
-});
+});*/
 var divespacios = document.querySelector(".palabra");
 var fondoNormal;
 var fondoGanador;
